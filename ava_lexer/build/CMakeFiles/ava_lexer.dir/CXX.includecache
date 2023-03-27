@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Grammar.h
+iostream
+-
+vector
+-
+string
+-
+
+/Code/cpp/Ava-Language/ava_lexer/src/Grammar.cpp
+Grammar.h
+/Code/cpp/Ava-Language/ava_lexer/src/Grammar.h
+

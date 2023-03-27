@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <set>
 
 enum NodeType_t {START_NODE, NORMAL_NODE, END_NODE};
 
@@ -17,6 +18,8 @@ typedef struct Node {
 } Node_t;
 
 typedef struct NFA {
+	std::set<std::string> ALPHABET;
+	std::vector<Node_t> S;
 	
 } NFA_t;
 

@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(ava)
+project(ava_lexer)
 
 include_directories(./include)
 
-add_compile_options(-std=c++11 -Wall)
+add_compile_options(-std=c++17 -Wall)
 
 aux_source_directory(./src SRC)
 
-add_executable(ava ${SRC})
+add_executable(ava_lexer ${SRC})
 
 set(CMAKE_BUILD_TYPE Debug)
 
