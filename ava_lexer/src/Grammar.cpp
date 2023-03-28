@@ -10,7 +10,12 @@ int Grammar::parse_from_str(std::vector<std::string> strs) {
 		}
 		tmp.left = str.substr(0, seg);
 		std::string ts = "";
-		for(int i = seg+4; i < str.size(); ++i) {
+		for(int i = seg+4; ; ++i) {
+			if('\0' == str[i]) {
+				tmp.right.push_back(ts);
+				ts = "";
+				break;
+			}
 			if(' ' == str[i]) {
 				tmp.right.push_back(ts);
 				ts = "";
