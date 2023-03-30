@@ -1,37 +1,24 @@
-<program> -> <function>* <main_function>
-<function> -> "fn" <identifier> "=" <lambda_expression>
-<main_function> -> "[" "]" "(" ")" "{" <statement>* "}" "(" ")" ";"
-<lambda_expression> -> "[" <parameter_list> "]" "->" <type> "{" <statement>* "}"
-<parameter_list> -> <parameter> ("," <parameter>)*
-<parameter> -> <type> <identifier>
-<type> -> "number"
-<type> -> "str"
-<type> -> "fn"
-<statement> -> <expression_statement>
-<statement> -> <declaration_statement>
-<statement> -> <print_statement>
-<expression_statement> -> <expression> ";"
-<declaration_statement> -> <type> <identifier> "=" <expression> ";"
-<print_statement> -> "print" "(" <expression> ")" ";"
-<expression> -> <number_literal>
-<expression> -> <string_literal>
-<expression> -> <function_call>
-<expression> -> "(" <expression> ")"
-<expression> -> "-" <expression>
-<expression> -> "+" <expression>
-<expression> -> <expression> "*" <expression>
-<expression> -> <expression> "/" <expression>
-<expression> -> <expression> "+" <expression>
-<expression> -> <expression> "-" <expression>
-<expression> -> "(" ")" "->" "(" ")" "{" <statement>* "}" "(" ")"
-<number_literal> -> ("+"|"-")? (<integer_literal>|<floating_point_literal>|<complex_literal>)
-<integer_literal> -> [0-9]+
-<floating_point_literal> -> [0-9]* "." [0-9]+
-<floating_point_literal> -> [0-9]+ "." [0-9]*
-<floating_point_literal> -> [0-9]+ "." [0-9]* "e" ("+"|"-")? [0-9]+
-<floating_point_literal> -> [0-9]* "." [0-9]+ "e" ("+"|"-")? [0-9]+
-<complex_literal> -> (<integer_literal>|<floating_point_literal>) "+" (<integer_literal>|<floating_point_literal>) "i"
-<string_literal> -> "'" (<escaped_character>|[^'\n])* "'"
-<string_literal> -> '"' (<escaped_character>|[^"\n])* '"'
-<escaped_character> -> "\\" ["'""\\nrt]
-<function_call> -> (<identifier>|<lambda_expression>) "(" (<expression>|",")* ")"
+KEYWORD -> "fn"
+KEYWORD -> "number"
+KEYWORD -> "str"
+KEYWORD -> "return"
+KEYWORD -> "if"
+KEYWORD -> "else"
+KEYWORD -> "while"
+
+SEGMENT -> ";"
+SEGMENT -> ","
+SEGMENT -> "("
+SEGMENT -> ")"
+SEGMENT -> "[]"
+SEGMENT -> "{"
+SEGMENT -> "}"
+SEGMENT -> "->"
+
+OPERATOR -> "+"
+OPERATOR -> "-"
+OPERATOR -> "*"
+OPERATOR -> "/"
+OPERATOR -> "="
+
+NUMBER -> R OP R "i"

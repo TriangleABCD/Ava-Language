@@ -6,21 +6,25 @@
 #include <map>
 #include <set>
 
+#include "Grammar.h"
+
 enum NodeType_t {START_NODE, NORMAL_NODE, END_NODE};
 
 typedef struct Node {
-	int id;
 	NodeType_t type;
 	std::string node_name;
-	std::map<std::string, std::vector<Node*>> next;
+	std::multimap<std::string, std::string> goNext;
 
 	Node();
-	Node(int id, NodeType_t type, std::vector<std::pair<std::string, Node*>> next);
+	Node(NodeType_t type, std::string node_name, std::vector<std::pair<std::string, std::string>> edges);
+	
 } Node_t;
 
 typedef struct NFA {
-	std::set<std::string> ALPHABET;
-	std::vector<Node_t> S;
+	std::map<std::string, Node_t*> name2node;
+	std::vector<Node_t> nodes;
+
+	int buildNFA(Grammar G);
 	
 } NFA_t;
 
