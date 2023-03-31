@@ -22,28 +22,38 @@ Node::Node(NodeType_t type, std::string node_name,
 }
 
 int Node::addEdge(std::pair<std::string, std::string> edge) {
-	this->goNext.insert(edge);
+	this->goNext[edge.first].insert(edge.second);	
 	return 0;
 }
 
 int NFA::buildNFA(const Grammar& G) {
-	this->nodes.push_back(Node(START_NODE, G.start));
-	this->name2node[G.start] = &this->nodes[0];
+	Node_t* p = new Node(START_NODE, G.start);
+	this->nodes.push_back(p);
+	this->name2node[G.start] = this->nodes.back();
+    this->states.insert(G.start);
 
-	this->nodes.push_back(Node(END_NODE, "END"));
-	this->name2node["END"] = &this->nodes[1];
+	p = new Node(END_NODE, "END");
+	this->nodes.push_back(p);
+	this->name2node["END"] = this->nodes.back();
+    this->states.insert("END");
 
 	for(auto& g: G.grammars) {
 		if(this->states.find(g.left) == this->states.end()) {
+			p = new Node(NORMAL_NODE, g.left);
+			this->nodes.push_back(p);
+			this->name2node[g.left] = this->nodes.back();
 			this->states.insert(g.left);
 		}
 
-		this->alphabet.insert(g.right[0]);
-
 		if(1 == g.right.size()) {
+			this->alphabet.insert(g.right[0]);
 			this->name2node[g.left]->addEdge({g.right[0], "END"});
 		} else if(2 == g.right.size()) {
+			this->alphabet.insert(g.right[0]);
 			if(this->states.find(g.right[1]) == this->states.end()) {
+				p = new Node(NORMAL_NODE, g.right[1]);
+				this->nodes.push_back(p);
+				this->name2node[g.right[1]] = this->nodes.back();
 				this->states.insert(g.right[1]);
 			}
 			this->name2node[g.left]->addEdge({g.right[0], g.right[1]});
@@ -54,4 +64,10 @@ int NFA::buildNFA(const Grammar& G) {
 
 	return 0;
 }
-	
+
+
+NFA::~NFA() {
+	for(auto& p: this->nodes) {
+		delete p;
+	}
+}

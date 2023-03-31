@@ -1,24 +1,8 @@
-KEYWORD -> "fn"
-KEYWORD -> "number"
-KEYWORD -> "str"
-KEYWORD -> "return"
-KEYWORD -> "if"
-KEYWORD -> "else"
-KEYWORD -> "while"
-
-SEGMENT -> ";"
-SEGMENT -> ","
-SEGMENT -> "("
-SEGMENT -> ")"
-SEGMENT -> "[]"
-SEGMENT -> "{"
-SEGMENT -> "}"
-SEGMENT -> "->"
-
-OPERATOR -> "+"
-OPERATOR -> "-"
-OPERATOR -> "*"
-OPERATOR -> "/"
-OPERATOR -> "="
-
-NUMBER -> R OP R "i"
+S -> a A
+S -> b B
+S -> %
+A -> a B
+A -> b A
+B -> a S
+B -> b A
+B -> %

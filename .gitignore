@@ -1,3 +1,7 @@
+# dic
+ava_lexer/build/
+ava_parser/build/
+
 # Prerequisites
 *.d
 

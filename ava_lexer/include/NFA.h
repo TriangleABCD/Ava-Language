@@ -14,7 +14,7 @@ enum NodeType_t {START_NODE, NORMAL_NODE, END_NODE};
 typedef struct Node {
 	NodeType_t type;
 	std::string node_name;
-	std::multimap<std::string, std::string> goNext;
+	std::map<std::string, std::set<std::string>> goNext;
 
 	Node();
 	Node(NodeType_t type, std::string node_name, const std::vector<std::pair<std::string, std::string>>& edges);
@@ -24,10 +24,11 @@ typedef struct Node {
 
 typedef struct NFA {
 	std::map<std::string, Node_t*> name2node;
-	std::vector<Node_t> nodes;
+	std::vector<Node_t*> nodes;
 	std::set<std::string> alphabet;
 	std::set<std::string> states;
 	int buildNFA(const Grammar& G);
+	virtual ~NFA();
 	
 } NFA_t;
 
