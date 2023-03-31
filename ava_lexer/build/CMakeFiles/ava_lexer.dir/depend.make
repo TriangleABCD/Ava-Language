@@ -4,6 +4,7 @@
 CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o: ../include/Grammar.h
 CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o: ../src/Grammar.cpp
 
+CMakeFiles/ava_lexer.dir/src/NFA.cpp.o: ../include/Grammar.h
 CMakeFiles/ava_lexer.dir/src/NFA.cpp.o: ../include/NFA.h
 CMakeFiles/ava_lexer.dir/src/NFA.cpp.o: ../src/NFA.cpp
 

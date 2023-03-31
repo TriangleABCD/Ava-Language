@@ -5,6 +5,7 @@
 #include <vector>
 #include <map>
 #include <set>
+#include <assert.h>
 
 #include "Grammar.h"
 
@@ -16,15 +17,17 @@ typedef struct Node {
 	std::multimap<std::string, std::string> goNext;
 
 	Node();
-	Node(NodeType_t type, std::string node_name, std::vector<std::pair<std::string, std::string>> edges);
-	
+	Node(NodeType_t type, std::string node_name, const std::vector<std::pair<std::string, std::string>>& edges);
+	Node(NodeType_t type, std::string node_name);
+	int addEdge(std::pair<std::string, std::string> edge);
 } Node_t;
 
 typedef struct NFA {
 	std::map<std::string, Node_t*> name2node;
 	std::vector<Node_t> nodes;
-
-	int buildNFA(Grammar G);
+	std::set<std::string> alphabet;
+	std::set<std::string> states;
+	int buildNFA(const Grammar& G);
 	
 } NFA_t;
 
