@@ -74,12 +74,12 @@ clean: CMakeFiles/ava_lexer.dir/clean
 CMakeFiles/ava_lexer.dir/all:
 	$(MAKE) -f CMakeFiles/ava_lexer.dir/build.make CMakeFiles/ava_lexer.dir/depend
 	$(MAKE) -f CMakeFiles/ava_lexer.dir/build.make CMakeFiles/ava_lexer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles --progress-num=1,2,3,4 "Built target ava_lexer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target ava_lexer"
 .PHONY : CMakeFiles/ava_lexer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ava_lexer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ava_lexer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles 0
 .PHONY : CMakeFiles/ava_lexer.dir/rule

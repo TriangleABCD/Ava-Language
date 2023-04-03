@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ava_lexer.dir/src/DFA.cpp.o"
   "CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o"
   "CMakeFiles/ava_lexer.dir/src/NFA.cpp.o"
   "CMakeFiles/ava_lexer.dir/src/main.cpp.o"

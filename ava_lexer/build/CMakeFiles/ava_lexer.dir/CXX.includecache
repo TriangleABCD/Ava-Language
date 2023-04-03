@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+../include/DFA.h
+algorithm
+-
+NFA.h
+../include/NFA.h
+
 ../include/Grammar.h
 iostream
 -
@@ -28,15 +34,7 @@ assert.h
 Grammar.h
 ../include/Grammar.h
 
-/Code/cpp/Ava-Language/ava_lexer/src/main.cpp
-iostream
--
-string
--
-fstream
--
-Grammar.h
-/Code/cpp/Ava-Language/ava_lexer/src/Grammar.h
-NFA.h
-/Code/cpp/Ava-Language/ava_lexer/src/NFA.h
+/Code/cpp/Ava-Language/ava_lexer/src/DFA.cpp
+DFA.h
+/Code/cpp/Ava-Language/ava_lexer/src/DFA.h
 

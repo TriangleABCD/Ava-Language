@@ -1,6 +1,8 @@
 #ifndef DFA_H
 #define DFA_H
 
+#include <algorithm>
+
 #include "NFA.h"
 
 typedef struct DFA_Node {
@@ -20,6 +22,7 @@ typedef struct DFA {
 	std::set<std::string> alphabet;
 	std::set<std::string> states;
 
+	DFA();
 	int buildDFA(NFA_t& nfa);
 	int simplifyDFA();
 	std::string subSets2str(const std::set<Node_t*>& subSets);

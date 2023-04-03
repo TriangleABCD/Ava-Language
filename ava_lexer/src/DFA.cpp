@@ -28,8 +28,13 @@ int DFA_Node::addEdge(const std::pair<std::string, std::string>& edge) {
 }
 
 
+DFA::DFA() {
+}
+
+
 int DFA::buildDFA(NFA_t& nfa) {
 	this->alphabet = nfa.alphabet;
+	this->alphabet.erase("%");
 
 	std::set<std::string> C;
 	std::map<std::string, bool> ok;
@@ -90,7 +95,11 @@ int DFA::buildDFA(NFA_t& nfa) {
 			continue;
 		}
 		this->states.insert(st);
-		p = new DFA_Node(NORMAL_NODE, st);
+		if(st.find("END") != std::string::npos) {
+			p = new DFA_Node(END_NODE, st);
+		} else {
+			p = new DFA_Node(NORMAL_NODE, st);
+		}
 		this->nodes.push_back(p);
 		this->name2node[st] = p;
 	}
@@ -112,6 +121,9 @@ int DFA::simplifyDFA() {
 std::set<Node_t*> DFA::move_(NFA_t& nfa, std::set<Node_t*> cur, std::string a) {
 	std::set<Node_t*> res;
 	for(auto& node: cur) {
+		if(node->goNext.count(a) <= 0) {
+			continue;
+		}
 		for(auto& nextNode: node->goNext[a]) {
 			res.insert(nfa.name2node[nextNode]);
 		}
@@ -121,9 +133,19 @@ std::set<Node_t*> DFA::move_(NFA_t& nfa, std::set<Node_t*> cur, std::string a) {
 
 
 int DFA::closure_(NFA_t& nfa, std::set<Node_t*>& cur) {
-	for(auto& node: cur) {
-		for(auto& nextNode: node->goNext["%"]) {
-			cur.insert(nfa.name2node[nextNode]);
+	int size = 0;
+	while(true) {
+		if(size == cur.size()) {
+			break;
+		}
+		size = cur.size();
+		for(auto& node: cur) {
+			if(node->goNext.count("%") <= 0) {
+				continue;
+			}
+			for(auto& nextNode: node->goNext["%"]) {
+				cur.insert(nfa.name2node[nextNode]);
+			}
 		}
 	}
 	return 0;

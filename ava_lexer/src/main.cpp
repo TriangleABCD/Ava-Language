@@ -4,6 +4,7 @@
 
 #include "Grammar.h"
 #include "NFA.h"
+#include "DFA.h"
 
 using namespace std;
 
@@ -32,6 +33,16 @@ int main(int argc, char** argv) {
                 std::cout << "[*] f(" << node->node_name << ", " 
                 << edge.first << ") = " << ee << std::endl;
             }
+        }
+    }
+    std::cout << "--------------------------------------\n";
+    DFA_t* dfa = new DFA();
+    dfa->buildDFA(nfa);
+    for(auto& node: dfa->nodes) {
+        std::cout << node->node_name << std::endl;
+        for(auto& edge: node->goNext) {
+            std::cout << "[*] f(" << node->node_name << ", " 
+                << edge.first << ") = " << edge.second << std::endl;
         }
     }
     return 0;

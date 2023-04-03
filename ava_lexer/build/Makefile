@@ -123,6 +123,33 @@ ava_lexer/fast:
 	$(MAKE) -f CMakeFiles/ava_lexer.dir/build.make CMakeFiles/ava_lexer.dir/build
 .PHONY : ava_lexer/fast
 
+src/DFA.o: src/DFA.cpp.o
+
+.PHONY : src/DFA.o
+
+# target to build an object file
+src/DFA.cpp.o:
+	$(MAKE) -f CMakeFiles/ava_lexer.dir/build.make CMakeFiles/ava_lexer.dir/src/DFA.cpp.o
+.PHONY : src/DFA.cpp.o
+
+src/DFA.i: src/DFA.cpp.i
+
+.PHONY : src/DFA.i
+
+# target to preprocess a source file
+src/DFA.cpp.i:
+	$(MAKE) -f CMakeFiles/ava_lexer.dir/build.make CMakeFiles/ava_lexer.dir/src/DFA.cpp.i
+.PHONY : src/DFA.cpp.i
+
+src/DFA.s: src/DFA.cpp.s
+
+.PHONY : src/DFA.s
+
+# target to generate assembly for a file
+src/DFA.cpp.s:
+	$(MAKE) -f CMakeFiles/ava_lexer.dir/build.make CMakeFiles/ava_lexer.dir/src/DFA.cpp.s
+.PHONY : src/DFA.cpp.s
+
 src/Grammar.o: src/Grammar.cpp.o
 
 .PHONY : src/Grammar.o
@@ -213,6 +240,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ava_lexer"
+	@echo "... src/DFA.o"
+	@echo "... src/DFA.i"
+	@echo "... src/DFA.s"
 	@echo "... src/Grammar.o"
 	@echo "... src/Grammar.i"
 	@echo "... src/Grammar.s"
