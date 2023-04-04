@@ -7,6 +7,7 @@
 #include "Grammar.h"
 #include "NFA.h"
 #include "DFA.h"
+#include "Token.h"
 
 using namespace std;
 
