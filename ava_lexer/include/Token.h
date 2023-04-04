@@ -3,7 +3,7 @@
 
 #include <string>
 
-enum TokenType {KEYWORD, IDENTIFIER, VALUE, SEGMENT, OPERATOR};
+enum TokenType {KEYWORD, IDENTIFIER, VALUE, SEGMENT, OPERATOR, ERROR, OTHERS};
 
 typedef struct Token {
 	TokenType type;

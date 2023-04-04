@@ -38,6 +38,10 @@ assert.h
 Grammar.h
 ../include/Grammar.h
 
+../include/Token.h
+string
+-
+
 /Code/cpp/Ava-Language/ava_lexer/src/main.cpp
 iostream
 -
@@ -55,4 +59,6 @@ NFA.h
 /Code/cpp/Ava-Language/ava_lexer/src/NFA.h
 DFA.h
 /Code/cpp/Ava-Language/ava_lexer/src/DFA.h
+Token.h
+/Code/cpp/Ava-Language/ava_lexer/src/Token.h
 

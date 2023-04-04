@@ -15,9 +15,9 @@ Token::~Token() {
 }
 
 std::string Token::toString() {
-	std::string res = "(";
+	std::string res = "{\"line\": ";
 	res += std::to_string(this->line);
-	res += ", ";
+	res += ", \"type\": \"";
 	switch(this->type) {
 		case KEYWORD:
 			res += "KEYWORD";
@@ -34,9 +34,15 @@ std::string Token::toString() {
 		case OPERATOR:
 			res += "OPERATOR";
 			break;
+		case ERROR:
+			res += "ERROR";
+			break;
+		case OTHERS:
+			res += "OTHERS";
+			break;
 	}
-	res += ", ";
+	res += "\", \"value\": \"";
 	res += this->value;
-	res += ")";
+	res += "\"}";
 	return res;
 }

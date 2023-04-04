@@ -81,8 +81,14 @@ int DFA::buildDFA(NFA_t& nfa) {
 		auto cur_set = this->str2subSets(nfa, cur);
 		for(auto& a: this->alphabet) {
 			auto newState = this->move_(nfa, cur_set, a);
+			if(newState.size() == 0) {
+				continue;
+			}
 			assert(0 == this->closure_(nfa, newState));
 			auto new_str = this->subSets2str(newState);
+			if(new_str == "%") {
+				continue;
+			}
 			if(C.find(new_str) == C.end()) {
 				C.insert(new_str);
 			}
@@ -153,6 +159,9 @@ int DFA::closure_(NFA_t& nfa, std::set<Node_t*>& cur) {
 
 
 std::string DFA::subSets2str(const std::set<Node_t*>& subSets) {
+	if(subSets.size() == 0) {
+		return "%";
+	}
 	std::string str = "";
 	for(auto& p: subSets) {
 		str += p->node_name;

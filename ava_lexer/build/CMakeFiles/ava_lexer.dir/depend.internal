@@ -21,4 +21,5 @@ CMakeFiles/ava_lexer.dir/src/main.cpp.o
  ../include/EscapeCode.h
  ../include/Grammar.h
  ../include/NFA.h
+ ../include/Token.h
  /Code/cpp/Ava-Language/ava_lexer/src/main.cpp
