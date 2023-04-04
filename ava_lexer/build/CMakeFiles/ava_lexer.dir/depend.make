@@ -6,6 +6,9 @@ CMakeFiles/ava_lexer.dir/src/DFA.cpp.o: ../include/Grammar.h
 CMakeFiles/ava_lexer.dir/src/DFA.cpp.o: ../include/NFA.h
 CMakeFiles/ava_lexer.dir/src/DFA.cpp.o: ../src/DFA.cpp
 
+CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.o: ../include/EscapeCode.h
+CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.o: ../src/EscapeCode.cpp
+
 CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o: ../include/Grammar.h
 CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o: ../src/Grammar.cpp
 
@@ -14,6 +17,7 @@ CMakeFiles/ava_lexer.dir/src/NFA.cpp.o: ../include/NFA.h
 CMakeFiles/ava_lexer.dir/src/NFA.cpp.o: ../src/NFA.cpp
 
 CMakeFiles/ava_lexer.dir/src/main.cpp.o: ../include/DFA.h
+CMakeFiles/ava_lexer.dir/src/main.cpp.o: ../include/EscapeCode.h
 CMakeFiles/ava_lexer.dir/src/main.cpp.o: ../include/Grammar.h
 CMakeFiles/ava_lexer.dir/src/main.cpp.o: ../include/NFA.h
 CMakeFiles/ava_lexer.dir/src/main.cpp.o: ../src/main.cpp

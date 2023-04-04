@@ -112,8 +112,8 @@ int DFA::buildDFA(NFA_t& nfa) {
 }
 
 
-int DFA::simplifyDFA() {
-
+int DFA::simplifyDFA(DFA& dfa) {
+	
 	return 0;
 }
 
@@ -135,7 +135,7 @@ std::set<Node_t*> DFA::move_(NFA_t& nfa, std::set<Node_t*> cur, std::string a) {
 int DFA::closure_(NFA_t& nfa, std::set<Node_t*>& cur) {
 	int size = 0;
 	while(true) {
-		if(size == cur.size()) {
+		if(size == (int)cur.size()) {
 			break;
 		}
 		size = cur.size();
@@ -177,6 +177,27 @@ std::set<Node_t*> DFA::str2subSets(NFA_t& nfa, std::string str) {
 }
 
 
-DFA::~DFA() {
+bool DFA::accept(std::string str) {
+	std::string cur = this->nodes[0]->node_name;
+	for(auto& c: str) {
+		std::string cc = ""; cc += c;
+		if(this->alphabet.find(cc) == this->alphabet.end()) {
+			return false;
+		}
+		if(this->name2node[cur]->goNext.count(cc) <= 0) {
+			return false;
+		}
+		cur = this->name2node[cur]->goNext[cc];
+	}
+	if(END_NODE == this->name2node[cur]->node_type) {
+		return true;
+	}
+	return false;
+}
 
+
+DFA::~DFA() {
+	for(auto& p: this->nodes) {
+		delete p;
+	}
 }

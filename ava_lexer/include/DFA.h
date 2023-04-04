@@ -23,13 +23,22 @@ typedef struct DFA {
 	std::set<std::string> states;
 
 	DFA();
+
 	int buildDFA(NFA_t& nfa);
-	int simplifyDFA();
+
+	int simplifyDFA(DFA& dfa);
+
 	std::string subSets2str(const std::set<Node_t*>& subSets);
+
 	std::set<Node_t*> str2subSets(NFA_t& nfa, std::string str);
+
 	std::set<Node_t*> move_(NFA_t& nfa, std::set<Node_t*> cur, std::string a);
+
 	int closure_(NFA_t& nfa, std::set<Node_t*>& cur);
+
 	virtual ~DFA();
+
+	bool accept(std::string str);
 } DFA_t;
 
 #endif

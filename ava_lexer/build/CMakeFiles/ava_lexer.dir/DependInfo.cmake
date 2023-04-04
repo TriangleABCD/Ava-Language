@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Code/cpp/Ava-Language/ava_lexer/src/DFA.cpp" "/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles/ava_lexer.dir/src/DFA.cpp.o"
+  "/Code/cpp/Ava-Language/ava_lexer/src/EscapeCode.cpp" "/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.o"
   "/Code/cpp/Ava-Language/ava_lexer/src/Grammar.cpp" "/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o"
   "/Code/cpp/Ava-Language/ava_lexer/src/NFA.cpp" "/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles/ava_lexer.dir/src/NFA.cpp.o"
   "/Code/cpp/Ava-Language/ava_lexer/src/main.cpp" "/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles/ava_lexer.dir/src/main.cpp.o"

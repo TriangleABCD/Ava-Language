@@ -46,7 +46,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /Code/cpp/Ava-Language/ava_lexer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Code/cpp/Ava-Language/ava_lexer/build
+CMAKE_BINARY_DIR = /Code/cpp/Ava-Language/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ava_lexer.dir/depend.make
@@ -58,69 +58,69 @@ include CMakeFiles/ava_lexer.dir/progress.make
 include CMakeFiles/ava_lexer.dir/flags.make
 
 CMakeFiles/ava_lexer.dir/src/DFA.cpp.o: CMakeFiles/ava_lexer.dir/flags.make
-CMakeFiles/ava_lexer.dir/src/DFA.cpp.o: ../src/DFA.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ava_lexer.dir/src/DFA.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ava_lexer.dir/src/DFA.cpp.o -c /Code/cpp/Ava-Language/ava_lexer/src/DFA.cpp
+CMakeFiles/ava_lexer.dir/src/DFA.cpp.o: /Code/cpp/Ava-Language/ava_lexer/src/DFA.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Code/cpp/Ava-Language/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ava_lexer.dir/src/DFA.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ava_lexer.dir/src/DFA.cpp.o -c /Code/cpp/Ava-Language/ava_lexer/src/DFA.cpp
 
 CMakeFiles/ava_lexer.dir/src/DFA.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ava_lexer.dir/src/DFA.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Code/cpp/Ava-Language/ava_lexer/src/DFA.cpp > CMakeFiles/ava_lexer.dir/src/DFA.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Code/cpp/Ava-Language/ava_lexer/src/DFA.cpp > CMakeFiles/ava_lexer.dir/src/DFA.cpp.i
 
 CMakeFiles/ava_lexer.dir/src/DFA.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ava_lexer.dir/src/DFA.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Code/cpp/Ava-Language/ava_lexer/src/DFA.cpp -o CMakeFiles/ava_lexer.dir/src/DFA.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Code/cpp/Ava-Language/ava_lexer/src/DFA.cpp -o CMakeFiles/ava_lexer.dir/src/DFA.cpp.s
 
 CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.o: CMakeFiles/ava_lexer.dir/flags.make
-CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.o: ../src/EscapeCode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.o -c /Code/cpp/Ava-Language/ava_lexer/src/EscapeCode.cpp
+CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.o: /Code/cpp/Ava-Language/ava_lexer/src/EscapeCode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Code/cpp/Ava-Language/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.o -c /Code/cpp/Ava-Language/ava_lexer/src/EscapeCode.cpp
 
 CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Code/cpp/Ava-Language/ava_lexer/src/EscapeCode.cpp > CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Code/cpp/Ava-Language/ava_lexer/src/EscapeCode.cpp > CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.i
 
 CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Code/cpp/Ava-Language/ava_lexer/src/EscapeCode.cpp -o CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Code/cpp/Ava-Language/ava_lexer/src/EscapeCode.cpp -o CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.s
 
 CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o: CMakeFiles/ava_lexer.dir/flags.make
-CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o: ../src/Grammar.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o -c /Code/cpp/Ava-Language/ava_lexer/src/Grammar.cpp
+CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o: /Code/cpp/Ava-Language/ava_lexer/src/Grammar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Code/cpp/Ava-Language/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o -c /Code/cpp/Ava-Language/ava_lexer/src/Grammar.cpp
 
 CMakeFiles/ava_lexer.dir/src/Grammar.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ava_lexer.dir/src/Grammar.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Code/cpp/Ava-Language/ava_lexer/src/Grammar.cpp > CMakeFiles/ava_lexer.dir/src/Grammar.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Code/cpp/Ava-Language/ava_lexer/src/Grammar.cpp > CMakeFiles/ava_lexer.dir/src/Grammar.cpp.i
 
 CMakeFiles/ava_lexer.dir/src/Grammar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ava_lexer.dir/src/Grammar.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Code/cpp/Ava-Language/ava_lexer/src/Grammar.cpp -o CMakeFiles/ava_lexer.dir/src/Grammar.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Code/cpp/Ava-Language/ava_lexer/src/Grammar.cpp -o CMakeFiles/ava_lexer.dir/src/Grammar.cpp.s
 
 CMakeFiles/ava_lexer.dir/src/NFA.cpp.o: CMakeFiles/ava_lexer.dir/flags.make
-CMakeFiles/ava_lexer.dir/src/NFA.cpp.o: ../src/NFA.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ava_lexer.dir/src/NFA.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ava_lexer.dir/src/NFA.cpp.o -c /Code/cpp/Ava-Language/ava_lexer/src/NFA.cpp
+CMakeFiles/ava_lexer.dir/src/NFA.cpp.o: /Code/cpp/Ava-Language/ava_lexer/src/NFA.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Code/cpp/Ava-Language/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ava_lexer.dir/src/NFA.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ava_lexer.dir/src/NFA.cpp.o -c /Code/cpp/Ava-Language/ava_lexer/src/NFA.cpp
 
 CMakeFiles/ava_lexer.dir/src/NFA.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ava_lexer.dir/src/NFA.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Code/cpp/Ava-Language/ava_lexer/src/NFA.cpp > CMakeFiles/ava_lexer.dir/src/NFA.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Code/cpp/Ava-Language/ava_lexer/src/NFA.cpp > CMakeFiles/ava_lexer.dir/src/NFA.cpp.i
 
 CMakeFiles/ava_lexer.dir/src/NFA.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ava_lexer.dir/src/NFA.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Code/cpp/Ava-Language/ava_lexer/src/NFA.cpp -o CMakeFiles/ava_lexer.dir/src/NFA.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Code/cpp/Ava-Language/ava_lexer/src/NFA.cpp -o CMakeFiles/ava_lexer.dir/src/NFA.cpp.s
 
 CMakeFiles/ava_lexer.dir/src/main.cpp.o: CMakeFiles/ava_lexer.dir/flags.make
-CMakeFiles/ava_lexer.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ava_lexer.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ava_lexer.dir/src/main.cpp.o -c /Code/cpp/Ava-Language/ava_lexer/src/main.cpp
+CMakeFiles/ava_lexer.dir/src/main.cpp.o: /Code/cpp/Ava-Language/ava_lexer/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Code/cpp/Ava-Language/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ava_lexer.dir/src/main.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ava_lexer.dir/src/main.cpp.o -c /Code/cpp/Ava-Language/ava_lexer/src/main.cpp
 
 CMakeFiles/ava_lexer.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ava_lexer.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Code/cpp/Ava-Language/ava_lexer/src/main.cpp > CMakeFiles/ava_lexer.dir/src/main.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Code/cpp/Ava-Language/ava_lexer/src/main.cpp > CMakeFiles/ava_lexer.dir/src/main.cpp.i
 
 CMakeFiles/ava_lexer.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ava_lexer.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Code/cpp/Ava-Language/ava_lexer/src/main.cpp -o CMakeFiles/ava_lexer.dir/src/main.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Code/cpp/Ava-Language/ava_lexer/src/main.cpp -o CMakeFiles/ava_lexer.dir/src/main.cpp.s
 
 # Object files for target ava_lexer
 ava_lexer_OBJECTS = \
@@ -140,7 +140,7 @@ ava_lexer: CMakeFiles/ava_lexer.dir/src/NFA.cpp.o
 ava_lexer: CMakeFiles/ava_lexer.dir/src/main.cpp.o
 ava_lexer: CMakeFiles/ava_lexer.dir/build.make
 ava_lexer: CMakeFiles/ava_lexer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ava_lexer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Code/cpp/Ava-Language/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ava_lexer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ava_lexer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +153,6 @@ CMakeFiles/ava_lexer.dir/clean:
 .PHONY : CMakeFiles/ava_lexer.dir/clean
 
 CMakeFiles/ava_lexer.dir/depend:
-	cd /Code/cpp/Ava-Language/ava_lexer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Code/cpp/Ava-Language/ava_lexer /Code/cpp/Ava-Language/ava_lexer /Code/cpp/Ava-Language/ava_lexer/build /Code/cpp/Ava-Language/ava_lexer/build /Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles/ava_lexer.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Code/cpp/Ava-Language/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Code/cpp/Ava-Language/ava_lexer /Code/cpp/Ava-Language/ava_lexer /Code/cpp/Ava-Language/build /Code/cpp/Ava-Language/build /Code/cpp/Ava-Language/build/CMakeFiles/ava_lexer.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ava_lexer.dir/depend
 
