@@ -28,6 +28,7 @@ typedef struct NFA {
 	std::set<std::string> alphabet;
 	std::set<std::string> states;
 	int buildNFA(const Grammar& G);
+	std::string toString();
 	virtual ~NFA();
 	
 } NFA_t;

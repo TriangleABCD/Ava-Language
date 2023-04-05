@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/ava.dir/src/Grammar.cpp.o CMakeFiles/ava.dir/src/NFA.cpp.o CMakeFiles/ava.dir/src/main.cpp.o  -o ava 

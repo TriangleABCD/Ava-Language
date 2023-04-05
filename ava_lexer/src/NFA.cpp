@@ -65,6 +65,30 @@ int NFA::buildNFA(const Grammar& G) {
 	return 0;
 }
 
+std::string NFA::toString() {
+	std::string res = "";
+	res += std::to_string(this->nodes.size()) + "\n";
+	for(auto& node: this->nodes) {
+		res += node->node_name + "\n";
+	}
+	std::string tmp = "";
+	int cnt = 0;
+	for(auto& node: this->nodes) {
+		for(auto& a: this->alphabet) {
+			if(node->goNext.count(a) <= 0) {
+				continue;
+			}
+			for(auto& e: node->goNext[a]) {
+				++cnt;
+				tmp += node->node_name + " " + a + " " + e + "\n";
+			}
+		}
+	}
+	res += std::to_string(cnt) + "\n";
+	res += tmp;
+	return res;
+}
+
 
 NFA::~NFA() {
 	for(auto& p: this->nodes) {

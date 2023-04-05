@@ -48,5 +48,5 @@
 		"typeinfo": "cpp",
 		"cstring": "cpp"
 	},
-	"cmake.sourceDirectory": "${workspaceFolder}/ava_lexer"
+	"cmake.sourceDirectory": "${workspaceFolder}/ava_parser",
 }

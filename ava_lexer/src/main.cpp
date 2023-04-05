@@ -27,11 +27,11 @@ int main(int argc, char** argv) {
     bool vis = false;
     bool out = false;
 
-    if(argc == 4 && strcmp(argv[3], "-o") == 0) {
+    if((argc == 4 && strcmp(argv[3], "-o") == 0) || (argc == 5 && strcmp(argv[4], "-o") == 0)) {
         out = true;
     }
 
-    if(argc == 5 && strcmp(argv[4], "-v") == 0) {
+    if((argc == 5 && strcmp(argv[4], "-v") == 0) || (argc == 4 && strcmp(argv[3], "-v") == 0)) {
         vis = true;
     }
 
@@ -195,6 +195,65 @@ int main(int argc, char** argv) {
     res_file << res_token;
     res_file.close();
 
+    // output the NFAs and DFAs
+    if(!vis) {
+        goto Out;
+    }
+    std::cout << nfas.size() << "\n";
+    for(int i = 0; i < (int)nfas.size(); ++i) {
+        std::string name = "";
+        switch(i) {
+		    case 0:
+			    name += "SEGMENT";
+			    break;
+		    case 1:
+			    name += "OPERATOR";
+			    break;
+		    case 2:
+			    name += "KEYWORD";
+			    break;
+		    case 3:
+			    name += "VALUE";
+			    break;
+		    case 4:
+			    name += "IDENTIFIER";
+			    break;
+		    case 5:
+			    name += "VALUE";
+			    break;
+        }
+        std::cout << name << "\n";
+        std::cout << nfas[i]->toString();
+    }
+
+    std::cout << dfas.size() << "\n";
+    for(int i = 0; i < (int)dfas.size(); ++i) {
+        std::string name = "";
+        switch(i) {
+		    case 0:
+			    name += "SEGMENT";
+			    break;
+		    case 1:
+			    name += "OPERATOR";
+			    break;
+		    case 2:
+			    name += "KEYWORD";
+			    break;
+		    case 3:
+			    name += "VALUE";
+			    break;
+		    case 4:
+			    name += "IDENTIFIER";
+			    break;
+		    case 5:
+			    name += "VALUE";
+			    break;
+        }
+        std::cout << name << "\n";
+        std::cout << dfas[i]->toString();
+    }
+
+    Out:
     // output result on terminal
     if(!out) {
         return 0;

@@ -1,3 +1,0 @@
-/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles/edit_cache.dir
-/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles/rebuild_cache.dir
-/Code/cpp/Ava-Language/ava_lexer/build/CMakeFiles/ava_lexer.dir

@@ -204,6 +204,28 @@ bool DFA::accept(std::string str) {
 	return false;
 }
 
+std::string DFA::toString() {
+	std::string res = "";
+	res += std::to_string(this->nodes.size()) + "\n";
+	for(auto& node: this->nodes) {
+		res += node->node_name + "\n";
+	}
+	std::string tmp = "";
+	int cnt = 0;
+	for(auto& node: this->nodes) {
+		for(auto& a: this->alphabet) {
+			if(node->goNext.count(a) <= 0) {
+				continue;
+			}
+			++cnt;
+			tmp += node->node_name + " " + a + " " + node->goNext[a] + "\n";
+		}
+	}
+	res += std::to_string(cnt) + "\n";
+	res += tmp;
+	return res;
+}
+
 
 DFA::~DFA() {
 	for(auto& p: this->nodes) {

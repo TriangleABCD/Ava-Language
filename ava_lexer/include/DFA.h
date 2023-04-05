@@ -39,6 +39,9 @@ typedef struct DFA {
 	virtual ~DFA();
 
 	bool accept(std::string str);
+
+	std::string toString();
+
 } DFA_t;
 
 #endif
