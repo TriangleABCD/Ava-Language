@@ -14,19 +14,24 @@ int main(int argc, char** argv) {
     // arg parsing
     if(argc < 3) {
         std::cerr << set_color("[*] too few arguments", COLOR_RED) << "\n";
-        std::cerr << set_color("[*] usage: ./ava_lexer grammar_path source_path [-v]", COLOR_RED) << "\n";
+        std::cerr << set_color("[*] usage: ./ava_lexer grammar_path source_path [-o] [-v]", COLOR_RED) << "\n";
         return 0;
     }
 
-    if(argc > 4) {
+    if(argc > 5) {
         std::cerr << set_color("[*] too many arguments", COLOR_RED) << "\n";
-        std::cerr << set_color("[*] usage: ./ava_lexer grammar_path source_path [-v]", COLOR_RED) << "\n";
+        std::cerr << set_color("[*] usage: ./ava_lexer grammar_path source_path [-o] [-v]", COLOR_RED) << "\n";
         return 0;
     }
 
     bool vis = false;
+    bool out = false;
 
-    if(argc == 4 && strcmp(argv[3], "-v") == 0) {
+    if(argc == 4 && strcmp(argv[3], "-o") == 0) {
+        out = true;
+    }
+
+    if(argc == 5 && strcmp(argv[4], "-v") == 0) {
         vis = true;
     }
 
@@ -81,22 +86,6 @@ int main(int argc, char** argv) {
         assert(0 == nfas[i]->buildNFA(*grammars[i]));
     }
 
-    // for(auto& nfa: nfas) {
-    //     for(auto& node: nfa->nodes) {
-    //         std::cout << node->node_name << std::endl;
-    //         for(auto& a: nfa->alphabet) {
-    //             if(node->goNext.count(a) <= 0) {
-    //                 continue;
-    //             }
-    //             for(auto& e: node->goNext[a]) {
-    //                 std::cout << "f(" + node->node_name << ", " + a
-    //                     << ") = " << e << std::endl;
-    //             }
-    //         }
-    //     }
-    //     std::cout << "-------------------------" << std::endl;
-    // }
-
     // init DFAs
     std::vector<DFA_t*> dfas({
         new DFA(), new DFA(), new DFA(),
@@ -106,20 +95,6 @@ int main(int argc, char** argv) {
     for(int i = 0; i < (int)dfas.size(); ++i) {
         assert(0 == dfas[i]->buildDFA(*nfas[i]));
     }
-
-    // for(auto& dfa: dfas) {
-    //     for(auto& node: dfa->nodes) {
-    //         std::cout << node->node_name << std::endl;
-    //         for(auto& a: dfa->alphabet) {
-    //             if(node->goNext.count(a) <= 0) {
-    //                 continue;
-    //             }
-    //             std::cout << "f(" + node->node_name << ", " + a
-    //                 << ") = " << node->goNext[a] << std::endl;
-    //         }
-    //     }
-    //     std::cout << "-------------------------" << std::endl;
-    // }
 
     // read source
     std::ifstream source_file(source_path);
@@ -132,32 +107,104 @@ int main(int argc, char** argv) {
     while(getline(source_file, line)) {
         src_lines.push_back(line);
     }
+    std::string code = "";
+    for(auto& str: src_lines) {
+        code += str;
+        code += "\n";
+    }
+    
+    std::vector<Token> tokens;
+    int line_cnt = 1;
+    std::string ttmp = "";
 
-    // start lexical anylysis
-    // std::vector<Token_t> tokens;
-    // for(int i = 0; i < src_lines.size(); ++i) {
-    //     std::string tmp = "";
-    //     for(auto& c: src_lines[i]) {
-    //         if(c == ' ') {
-
-    //         }
-            
-    //     }
-    // }
-
-    int n = 4;
-    for(auto& node: dfas[n]->nodes) {
-        std::cout << node->node_name << std::endl;
-        for(auto& a: dfas[n]->alphabet) {
-            if(node->goNext.count(a) <= 0) {
-                continue;
+    auto check = [&](std::string tmp) {
+        bool acc = false;
+        for(int i = 2; i < (int)dfas.size(); ++i) {
+            if(dfas[i]->accept(tmp)) {
+                TokenType type;
+                switch(i) {
+                    case 2:
+                        type = KEYWORD;
+                        break;
+                    case 3:
+                        type = IDENTIFIER;
+                        break;
+                    case 4:
+                        type = VALUE;
+                        break;
+                    case 5:
+                        type = OTHERS;
+                        break;
+                }
+                Token t_token(type, line_cnt, tmp);
+                tokens.push_back(t_token);
+                acc = true;
+                break;
             }
-            std::cout << "f(" + node->node_name << ", " + a
-                << ") = " << node->goNext[a] << std::endl; 
+        }
+        if(!acc) {
+            Token t_token(ERROR, line_cnt, tmp);
+            tokens.push_back(t_token);
+        }
+    }; 
+    int code_length = (int)code.size();
+    for(int i = 0; i < code_length; ++i) {
+        auto c = code[i];
+        std::string tt = ""; tt += c;
+        if(dfas[0]->accept(tt)) {
+            if(ttmp != "") {
+                check(ttmp);
+                ttmp = "";
+            }
+            Token t_token(SEGMENT, line_cnt, tt);
+            tokens.push_back(t_token);
+            continue;
+        }
+        if((i > 0 && i < code_length-1 && code[i-1] == ' ' && code[i+1] == ' ') && dfas[1]->accept(tt)) {
+            if(ttmp != "") {
+                check(ttmp);
+                ttmp = "";
+            }
+            Token t_token(OPERATOR, line_cnt, tt);
+            tokens.push_back(t_token);
+            continue;
+        }
+        if('\n' == c || ' ' == c) {
+            if(ttmp != "") {
+                check(ttmp);
+                ttmp = "";
+            }
+            if('\n' == c) {
+                ++line_cnt;
+            }
+            continue;
+        }
+        ttmp += c;
+    }
+
+    // write result to file
+    std::ofstream res_file("./tokens.json");
+    assert(res_file.is_open());
+    std::string res_token = "{\n\t\"tokens\": [\n";
+    for(auto& token: tokens) {
+        res_token += "\t\t";
+        res_token += token.toJSON();
+        res_token += ", \n";
+    }
+    res_token += "\t]\n}";
+    res_file << res_token;
+    res_file.close();
+
+    // output result on terminal
+    if(!out) {
+        return 0;
+    }
+    for(auto& token: tokens) {
+        if(token.type == ERROR) {
+            std::cout << set_color(token.toString(), COLOR_RED) << std::endl;
+        } else {
+            std::cout << set_color(token.toString(), COLOR_BLACK) << std::endl;
         }
     }
-    std::string ee;
-    std::cin >> ee;
-    std::cout << std::boolalpha << dfas[n]->accept(ee) << std::endl;
     return 0;
 }

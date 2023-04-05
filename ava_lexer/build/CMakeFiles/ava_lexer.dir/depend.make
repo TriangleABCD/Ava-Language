@@ -16,6 +16,9 @@ CMakeFiles/ava_lexer.dir/src/NFA.cpp.o: ../include/Grammar.h
 CMakeFiles/ava_lexer.dir/src/NFA.cpp.o: ../include/NFA.h
 CMakeFiles/ava_lexer.dir/src/NFA.cpp.o: ../src/NFA.cpp
 
+CMakeFiles/ava_lexer.dir/src/Token.cpp.o: ../include/Token.h
+CMakeFiles/ava_lexer.dir/src/Token.cpp.o: ../src/Token.cpp
+
 CMakeFiles/ava_lexer.dir/src/main.cpp.o: ../include/DFA.h
 CMakeFiles/ava_lexer.dir/src/main.cpp.o: ../include/EscapeCode.h
 CMakeFiles/ava_lexer.dir/src/main.cpp.o: ../include/Grammar.h

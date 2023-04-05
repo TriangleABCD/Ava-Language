@@ -231,6 +231,33 @@ src/NFA.cpp.s:
 	$(MAKE) -f CMakeFiles/ava_lexer.dir/build.make CMakeFiles/ava_lexer.dir/src/NFA.cpp.s
 .PHONY : src/NFA.cpp.s
 
+src/Token.o: src/Token.cpp.o
+
+.PHONY : src/Token.o
+
+# target to build an object file
+src/Token.cpp.o:
+	$(MAKE) -f CMakeFiles/ava_lexer.dir/build.make CMakeFiles/ava_lexer.dir/src/Token.cpp.o
+.PHONY : src/Token.cpp.o
+
+src/Token.i: src/Token.cpp.i
+
+.PHONY : src/Token.i
+
+# target to preprocess a source file
+src/Token.cpp.i:
+	$(MAKE) -f CMakeFiles/ava_lexer.dir/build.make CMakeFiles/ava_lexer.dir/src/Token.cpp.i
+.PHONY : src/Token.cpp.i
+
+src/Token.s: src/Token.cpp.s
+
+.PHONY : src/Token.s
+
+# target to generate assembly for a file
+src/Token.cpp.s:
+	$(MAKE) -f CMakeFiles/ava_lexer.dir/build.make CMakeFiles/ava_lexer.dir/src/Token.cpp.s
+.PHONY : src/Token.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -279,6 +306,9 @@ help:
 	@echo "... src/NFA.o"
 	@echo "... src/NFA.i"
 	@echo "... src/NFA.s"
+	@echo "... src/Token.o"
+	@echo "... src/Token.i"
+	@echo "... src/Token.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

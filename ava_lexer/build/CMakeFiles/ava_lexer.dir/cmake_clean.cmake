@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ava_lexer.dir/src/EscapeCode.cpp.o"
   "CMakeFiles/ava_lexer.dir/src/Grammar.cpp.o"
   "CMakeFiles/ava_lexer.dir/src/NFA.cpp.o"
+  "CMakeFiles/ava_lexer.dir/src/Token.cpp.o"
   "CMakeFiles/ava_lexer.dir/src/main.cpp.o"
   "ava_lexer"
   "ava_lexer.pdb"

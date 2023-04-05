@@ -1,5 +1,5 @@
-fn add = [](number a, number b) -> number {
-    return a+b;
+fn add = [](number a, number b) number {
+    return a + b;
 };
 
 fn max = [](number a, number b) {
@@ -9,11 +9,11 @@ fn max = [](number a, number b) {
     return b;
 };
 
-fn doit = [](fn func, number a, number b) -> number {
+fn doit = [](fn func, number a, number b) number {
     return func(a, b);
 };
 
-[]() -> number {
+[]() number {
     number a = 3;
     number b = 4;
     str c = 'hello';
@@ -21,12 +21,12 @@ fn doit = [](fn func, number a, number b) -> number {
     number e = 3.14;
     number f = max(a, b);
     number g = add(a, e);
-    number h = []() -> number {
-        return (a+b)/e + 2.13
+    number 411abc = 3;
+    number h = []() number {
+        return (a + b) / e - 2.13;
     }
-    number i = 3.13 + 2i;
+    number _i = -3+2i;
     doit(add, a, b);
-    doit([]() {return a-b}, a, b);
     print(a);
     print(c);
     return 0;

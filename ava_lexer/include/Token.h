@@ -14,8 +14,11 @@ typedef struct Token {
 
 	Token(TokenType type, int line, std::string value);
 
+	Token(const Token& token);
+
 	virtual ~Token();
 
+	std::string toJSON();
 	std::string toString();
 
 } Token_t;

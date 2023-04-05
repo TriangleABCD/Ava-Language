@@ -7,8 +7,6 @@ SEG -> (
 SEG -> )
 SEG -> ;
 SEG -> ,
-SEG -> - GE
-GE -> >
 //
 OPERATOR
 OP -> +
@@ -35,6 +33,8 @@ ETURN -> e TURN
 TURN -> t URN
 URN -> u RN
 RN -> r N
+KEY -> i FF
+FF -> f
 //
 IDENTIFIER
 IDENTIFIER -> _ IDENTI
@@ -246,69 +246,75 @@ STRS -> 9 STRS
 STRS -> '
 VALUE -> % NUMBER
 NUMBER -> % ENUM
-ENUM -> + B
-ENUM -> - B
-ENUM -> % B
-B -> 0 D
-B -> 1 D
-B -> 2 D
-B -> 3 D
-B -> 4 D
-B -> 5 D
-B -> 6 D
-B -> 7 D
-B -> 8 D
-B -> 9 D
-B -> % D
-D -> 0 D
-D -> 1 D
-D -> 2 D
-D -> 3 D
-D -> 4 D
-D -> 5 D
-D -> 6 D
-D -> 7 D
-D -> 8 D
-D -> 9 D
-D -> % C
-C -> . E
-E -> 0 G
-E -> 1 G
-E -> 2 G
-E -> 3 G
-E -> 4 G
-E -> 5 G
-E -> 6 G
-E -> 7 G
-E -> 8 G
-E -> 9 G
-E -> % F
-G -> 0 G
-G -> 1 G
-G -> 2 G
-G -> 3 G
-G -> 4 G
-G -> 5 G
-G -> 6 G
-G -> 7 G
-G -> 8 G
-G -> 9 G
-G -> % F
-F -> e H
-H -> + I
-H -> - I
-H -> % I
-I -> 0 J
-I -> 1 J
-I -> 2 J
-I -> 3 J
-I -> 4 J
-I -> 5 J
-I -> 6 J
-I -> 7 J
-I -> 8 J
-I -> 9 J
-I -> %
+ENUM -> + A
+ENUM -> - A
+ENUM -> % A
+A -> 0 F
+A -> 1 F
+A -> 2 F
+A -> 3 F
+A -> 4 F
+A -> 5 F
+A -> 6 F
+A -> 7 F
+A -> 8 F
+A -> 9 F
+A -> % B
+F -> 0 F
+F -> 1 F
+F -> 2 F
+F -> 3 F
+F -> 4 F
+F -> 5 F
+F -> 6 F
+F -> 7 F
+F -> 8 F
+F -> 9 F
+F -> % B
+B -> . G
+G -> 0 H
+G -> 1 H
+G -> 2 H
+G -> 3 H
+G -> 4 H
+G -> 5 H
+G -> 6 H
+G -> 7 H
+G -> 8 H
+G -> 9 H
+G -> % C
+H -> 0 H
+H -> 1 H
+H -> 2 H
+H -> 3 H
+H -> 4 H
+H -> 5 H
+H -> 6 H
+H -> 7 H
+H -> 8 H
+H -> 9 H
+H -> % C
+B -> % C
+C -> e I
+I -> + E
+I -> - E
+I -> % E
+C -> %
+C -> e D
+D -> + E
+D -> - E
+D -> % E
+E -> 0 J
+E -> 1 J
+E -> 2 J
+E -> 3 J
+E -> 4 J
+E -> 5 J
+E -> 6 J
+E -> 7 J
+E -> 8 J
+E -> 9 J
+E -> %
 J -> 0 J
 J -> 1 J
 J -> 2 J
@@ -320,6 +326,57 @@ J -> 7 J
 J -> 8 J
 J -> 9 J
 J -> %
+NUMBER -> % CNUM
+CNUM -> + AA
+CNUM -> - AA
+CNUM -> % AA
+AA -> 0 EE
+AA -> 1 EE
+AA -> 2 EE
+AA -> 3 EE
+AA -> 4 EE
+AA -> 5 EE
+AA -> 6 EE
+AA -> 7 EE
+AA -> 8 EE
+AA -> 9 EE
+AA -> % BB
+EE -> 0 EE
+EE -> 1 EE
+EE -> 2 EE
+EE -> 3 EE
+EE -> 4 EE
+EE -> 5 EE
+EE -> 6 EE
+EE -> 7 EE
+EE -> 8 EE
+EE -> 9 EE
+EE -> % BB
+BB -> + CC
+BB -> - CC
+CC -> 0 FF
+CC -> 1 FF
+CC -> 2 FF
+CC -> 3 FF
+CC -> 4 FF
+CC -> 5 FF
+CC -> 6 FF
+CC -> 7 FF
+CC -> 8 FF
+CC -> 9 FF
+CC -> % DD
+FF -> 0 FF
+FF -> 1 FF
+FF -> 2 FF
+FF -> 3 FF
+FF -> 4 FF
+FF -> 5 FF
+FF -> 6 FF
+FF -> 7 FF
+FF -> 8 FF
+FF -> 9 FF
+FF -> % DD
+DD -> i
 //
 OTHERS
 OTHER -> / OTH
