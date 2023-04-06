@@ -5,10 +5,20 @@
 #include <vector>
 #include <string>
 
-struct Grammar_Statement {
-	std::string left;
-	std::vector<std::string> right;
+enum VType {V_T, V_N, DOT};
+
+struct V {
+	VType type;
+	std::string value;
+	V();
+	V(VType type, std::string value);
 };
+
+typedef struct Grammar_Statement {
+	std::string left;
+	std::vector<V> right;
+	std::string forward;
+} Production;
 
 struct Grammar {
 	std::string start;

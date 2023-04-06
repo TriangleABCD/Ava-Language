@@ -1,6 +1,7 @@
 build/
 ava_lexer/build/
 ava_parser/build/
+.vscode/
 
 
 # Prerequisites
