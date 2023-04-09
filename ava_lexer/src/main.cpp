@@ -184,15 +184,21 @@ int main(int argc, char** argv) {
 
     // write result to file
     std::ofstream res_file("./tokens.json");
-    assert(res_file.is_open());
+    std::ofstream res_out_file("./tokens.txt");
+    assert(res_file.is_open() && res_out_file.is_open());
+    std::string res_out = "";
+    res_out += std::to_string(tokens.size()) + "\n";
     std::string res_token = "{\n\t\"tokens\": [\n";
     for(auto& token: tokens) {
         res_token += "\t\t";
         res_token += token.toJSON();
         res_token += ", \n";
+        res_out += token.toString() + "\n";
     }
     res_token += "\t]\n}";
     res_file << res_token;
+    res_out_file << res_out;
+    res_out_file.close();
     res_file.close();
 
     // output the NFAs and DFAs

@@ -34,9 +34,6 @@ fn doit = [](fn func, number a, number b) number {
     number e = 3.14;
     number f = max(a, b);
     number g = add(a, e);
-    number h = []() -> number {
-        return (a + b) / e + 2.13；
-    }
     number i = 3+2i;
     doit(add, a, b);
     print(a);

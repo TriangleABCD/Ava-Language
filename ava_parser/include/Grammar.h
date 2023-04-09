@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <set>
 
 enum VType {V_T, V_N, DOT};
 
@@ -12,12 +13,17 @@ struct V {
 	std::string value;
 	V();
 	V(VType type, std::string value);
+	V(const V& v);
+	void operator=(const V& v);
 };
 
 typedef struct Grammar_Statement {
 	std::string left;
 	std::vector<V> right;
-	std::string forward;
+	std::set<std::string> forward;
+	Grammar_Statement();
+	Grammar_Statement(std::string left, std::vector<V> right, std::set<std::string> forward);
+	Grammar_Statement(const Grammar_Statement& g);
 } Production;
 
 struct Grammar {

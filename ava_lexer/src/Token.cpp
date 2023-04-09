@@ -55,9 +55,9 @@ std::string Token::toJSON() {
 
 
 std::string Token::toString() {
-	std::string res = "(";
+	std::string res = "";
 	res += std::to_string(this->line);
-	res += ",\t";
+	res += " ";
 	switch(this->type) {
 		case KEYWORD:
 			res += "KEYWORD";
@@ -81,8 +81,8 @@ std::string Token::toString() {
 			res += "OTHERS";
 			break;
 	}
-	res += ", \t";
+	res += " ";
 	res += this->value;
-	res += ")";
+	res += "";
 	return res;
 }

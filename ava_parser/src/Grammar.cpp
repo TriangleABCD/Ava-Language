@@ -10,6 +10,33 @@ V::V(VType type, std::string value) {
 	this->value = value;
 }
 
+V::V(const V& v) {
+	this->type = v.type;
+	this->value = v.value;
+}
+	
+	
+void V::operator=(const V& v) {
+	this->type = v.type;
+	this->value = v.value;
+}
+
+Grammar_Statement::Grammar_Statement() {
+}
+
+
+Grammar_Statement::Grammar_Statement(std::string left, std::vector<V> right, std::set<std::string> forward) {
+	this->left = left;
+	this->right = right;
+	this->forward = forward;
+}
+
+Grammar_Statement::Grammar_Statement(const Grammar_Statement& g) {
+	this->left = g.left;
+	this->right = g.right;
+	this->forward = g.forward;
+}
+
 
 int Grammar::parse_from_str(std::vector<std::string> strs) {
 	for(auto& str: strs) {

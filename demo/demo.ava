@@ -22,11 +22,8 @@ fn doit = [](fn func, number a, number b) number {
     number f = max(a, b);
     number g = add(a, e);
     number 411abc = 3;
-    number h = []() number {
-        return (a + b) / e - 2.13;
-    }
     number _i = -3+2i;
-    doit(add, a, b);
+    doit(add, a, b);    //wangyaoyong
     print(a);
     print(c);
     return 0;
