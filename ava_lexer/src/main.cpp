@@ -205,32 +205,32 @@ int main(int argc, char** argv) {
     if(!vis) {
         goto Out;
     }
-    std::cout << nfas.size() << "\n";
-    for(int i = 0; i < (int)nfas.size(); ++i) {
-        std::string name = "";
-        switch(i) {
-		    case 0:
-			    name += "SEGMENT";
-			    break;
-		    case 1:
-			    name += "OPERATOR";
-			    break;
-		    case 2:
-			    name += "KEYWORD";
-			    break;
-		    case 3:
-			    name += "VALUE";
-			    break;
-		    case 4:
-			    name += "IDENTIFIER";
-			    break;
-		    case 5:
-			    name += "VALUE";
-			    break;
-        }
-        std::cout << name << "\n";
-        std::cout << nfas[i]->toString();
-    }
+    // std::cout << nfas.size() << "\n";
+    // for(int i = 0; i < (int)nfas.size(); ++i) {
+    //     std::string name = "";
+    //     switch(i) {
+	// 	    case 0:
+	// 		    name += "SEGMENT";
+	// 		    break;
+	// 	    case 1:
+	// 		    name += "OPERATOR";
+	// 		    break;
+	// 	    case 2:
+	// 		    name += "KEYWORD";
+	// 		    break;
+	// 	    case 3:
+	// 		    name += "IDENTIFIER";
+	// 		    break;
+	// 	    case 4:
+	// 		    name += "VALUE";
+	// 		    break;
+	// 	    case 5:
+	// 		    name += "OTHERS";
+	// 		    break;
+    //     }
+    //     std::cout << name << "\n";
+    //     std::cout << nfas[i]->toString();
+    // }
 
     std::cout << dfas.size() << "\n";
     for(int i = 0; i < (int)dfas.size(); ++i) {
@@ -246,13 +246,13 @@ int main(int argc, char** argv) {
 			    name += "KEYWORD";
 			    break;
 		    case 3:
-			    name += "VALUE";
-			    break;
-		    case 4:
 			    name += "IDENTIFIER";
 			    break;
-		    case 5:
+		    case 4:
 			    name += "VALUE";
+			    break;
+		    case 5:
+			    name += "OTHERS";
 			    break;
         }
         std::cout << name << "\n";

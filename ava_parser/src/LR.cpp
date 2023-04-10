@@ -62,11 +62,6 @@ int LR::initLR() {
 	
 
 	auto initTable = [&](int id, std::set<Production*>& cur, std::string c, int nid, std::set<Production*>& newState) {
-		// std::cout << "f(" << id << ", " << c << ") = " << nid << std::endl;
-		// for(auto& p: newState) {
-		// 	std::cout << getTag(p) << std::endl;
-		// }
-		// std::cout << "------------\n";
 		auto getK = [&](Production* p) -> int {
 			int k = 0;
 			Production pro;
@@ -103,8 +98,8 @@ int LR::initLR() {
 						this->ACTION[{nid, fc}] = {2, k};
 					}
 				}
-				this->ACTION[{id, c}] = {1, nid};
 			}
+			this->ACTION[{id, c}] = {1, nid};
 		} else if(this->VN.find(c) != this->VN.end()) {
 			this->GOTO[{id, c}] = nid;
 		}
@@ -133,20 +128,20 @@ int LR::initLR() {
 			this->VT.end()
 		);
 
-		std::cout << "******************\n";
-		for(auto& p: cur) {
-			std::cout << p->left << " -> ";
-			for(auto& rr: p->right) {
-				std::cout << rr.value << " ";
-			}
-			std::cout << ", {";
-			for(auto& fo: p->forward) {
-				std::cout << fo << ", ";
-			}
-			std::cout << "}";
-			std::cout << std::endl;
-		}
-		std::cout << "******************\n\n";
+		// std::cout << "******************\n";
+		// for(auto& p: cur) {
+		// 	std::cout << p->left << " -> ";
+		// 	for(auto& rr: p->right) {
+		// 		std::cout << rr.value << " ";
+		// 	}
+		// 	std::cout << ", {";
+		// 	for(auto& fo: p->forward) {
+		// 		std::cout << fo << ", ";
+		// 	}
+		// 	std::cout << "}";
+		// 	std::cout << std::endl;
+		// }
+		// std::cout << "******************\n\n";
 
 		for(auto& c: VTN) {
 			if(c == "%") {
@@ -373,6 +368,11 @@ bool LR::accept(std::vector<Token> _tokens, bool vis) {
 	for(auto& t: _tokens) {
 		if(t.type == OTHERS) {
 			continue;
+		} else if(t.type == ERROR) {
+			std::string err = "lex error: ";
+			err += t.value;
+			std::cout << set_color(err, COLOR_RED) << std::endl;
+			return false;
 		}
 		tokens.push_back(t);
 	}

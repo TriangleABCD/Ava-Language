@@ -218,7 +218,7 @@ std::string DFA::toString() {
 				continue;
 			}
 			++cnt;
-			tmp += node->node_name + " " + a + " " + node->goNext[a] + "\n";
+			tmp += node->node_name + " \'" + a + "\' " + node->goNext[a] + "\n";
 		}
 	}
 	res += std::to_string(cnt) + "\n";
