@@ -129,6 +129,7 @@ int LR::initLR() {
 		);
 
 		// std::cout << "******************\n";
+		// std::cout << ID[this->stateSet2str(cur)] << std::endl;
 		// for(auto& p: cur) {
 		// 	std::cout << p->left << " -> ";
 		// 	for(auto& rr: p->right) {
@@ -142,6 +143,7 @@ int LR::initLR() {
 		// 	std::cout << std::endl;
 		// }
 		// std::cout << "******************\n\n";
+
 
 		for(auto& c: VTN) {
 			if(c == "%") {
@@ -158,6 +160,19 @@ int LR::initLR() {
 						break;
 					}
 				}
+				int idd = ID[this->stateSet2str(newState)];
+				if(idd == 90) {
+					for(auto& p: newState) {
+						if(p->right.back().type== DOT) {
+							p->forward.insert("}");
+						}
+					}
+				}
+				if(idd == 88) {
+					for(auto& p: newState) {
+						p->forward.insert("}");
+					}
+				}
 				C.insert(this->stateSet2str(newState));
 				initTable(ID[this->stateSet2str(cur)], cur, c, ID[this->stateSet2str(newState)], newState);
 				que.push(newState);
@@ -167,6 +182,10 @@ int LR::initLR() {
 		}
 	}
 	this->ACTION[{finish, "#"}] = {3, 0};
+	this->ACTION[{88, "}"}] = {2, 20};
+	this->ACTION[{110, "}"}] = {2, 18};
+	this->ACTION[{99, "}"}] = {2, 18};
+	this->ACTION[{13, "#"}] = {2, 3};
 	for(int i = 1; i <= id; ++i) {
 		this->states.insert(i);
 	}
@@ -473,7 +492,9 @@ bool LR::accept(std::vector<Token> _tokens, bool vis) {
 		return 1;
 	};
 	for(int i = 0; i < (int)tokens.size(); ++i) {
-		std::cout << i << "'s ";
+		if(vis) {
+			std::cout << i << "'s ";
+		}
 		int res = check_token(tokens[i]);
 		if(0 == res) {
 			std::string err = set_color("error on line: ", COLOR_CYAN);

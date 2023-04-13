@@ -1,12 +1,5 @@
-fn add = [](number a, number b) number {
-    return a + b;
-};
-
-fn max = [](number a, number b) {
-    if(a > b) {
-        return a;
-    }
-    return b;
+fn func = [](number a) number {
+    return a;
 };
 
 fn doit = [](fn func, number a, number b) number {
